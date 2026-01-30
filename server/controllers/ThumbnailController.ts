@@ -79,16 +79,23 @@ for(const part of parts){
         finalBuffer = Buffer.from(part.inlineData.data,'base64')
     }
 }
-const fileName = `final-output-${Date.now()}.png`
-const filePath = path.join('images',fileName)
-//create the image directory
-fs.writeFileSync(filePath,finalBuffer!)
-const uploadResult = await cloudinary.uploader.upload(filePath,{resource_type:'image'})
-thumbnail.image_url = uploadResult.url
-thumbnail.isGenerating = false
-await thumbnail.save()
-res.json({message:"Thumbnail created",thumbnail})
-fs.unlinkSync(filePath)
+// 1. Convert your buffer directly to a Base64 Data URI
+const base64Image = `data:image/png;base64,${finalBuffer?.toString('base64')}`;
+
+// 2. Upload the string directly to Cloudinary (no local file needed)
+const uploadResult = await cloudinary.uploader.upload(base64Image, {
+    resource_type: 'image',
+     // Optional: keeps your Cloudinary organized
+});
+
+// 3. Update your database
+thumbnail.image_url = uploadResult.secure_url // Use secure_url for https
+thumbnail.isGenerating = false;
+await thumbnail.save();
+
+res.json({ message: "Thumbnail created", thumbnail });
+
+// NO NEED for fs.unlinkSync anymore because no file was created!
 }
 
 catch(e:any){
