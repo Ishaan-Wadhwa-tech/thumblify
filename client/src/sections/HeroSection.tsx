@@ -26,7 +26,7 @@ export default function HeroSection() {
                 </span>
                 <p className="flex items-center gap-1">
                     <span>Generate your first thumbnail for free</span>
-                    <ChevronRightIcon size={16} className="group-hover:translate-x-0.5 transition duration-300" />
+                    <ChevronRightIcon onClick={()=>navigate('/generate')} size={16} className="group-hover:translate-x-0.5 transition duration-300" />
                 </p>
             </motion.a>
             <motion.h1 className="text-5xl/17 md:text-6xl/21 font-medium max-w-3xl text-center"
