@@ -82,7 +82,6 @@ for(const part of parts){
 const fileName = `final-output-${Date.now()}.png`
 const filePath = path.join('images',fileName)
 //create the image directory
-fs.mkdirSync('images',{recursive:true})
 fs.writeFileSync(filePath,finalBuffer!)
 const uploadResult = await cloudinary.uploader.upload(filePath,{resource_type:'image'})
 thumbnail.image_url = uploadResult.url
