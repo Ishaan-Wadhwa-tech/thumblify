@@ -18,6 +18,10 @@ interface SessionData{
 }
 const app = express();
 app.set('trust proxy',1)
+app.use(cors({
+    origin:['http://localhost:5173','http://localhost:3000',"https://thumblify-drab.vercel.app"],
+    credentials:true
+}))
 await connectDb()
 app.use(session({
     secret:process.env.SESSION_SECRET as string,
@@ -36,10 +40,7 @@ app.use(session({
     })
 }))
 app.use(express.json())
-app.use(cors({
-    origin:['http://localhost:5173','http://localhost:3000',"https://thumblify-drab.vercel.app"],
-    credentials:true
-}))
+
 
 const port = process.env.PORT
 app.get('/', (req: Request, res: Response) => {
