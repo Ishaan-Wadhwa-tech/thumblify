@@ -5,5 +5,5 @@ const authRouter = express.Router()
 authRouter.post('/register',registerUser)
 authRouter.post('/login',loginUser)
 authRouter.get('/verify',protect,verifyUser)
-authRouter.post('/logout',protect,logoutUser)
+authRouter.post('/logout',logoutUser)
 export default authRouter
