@@ -17,6 +17,7 @@ interface SessionData{
 }
 }
 const app = express();
+app.set('trust proxy',1)
 await connectDb()
 app.use(session({
     secret:process.env.SESSION_SECRET as string,
