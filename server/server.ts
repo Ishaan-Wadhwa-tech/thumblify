@@ -32,7 +32,7 @@ app.use(session({
 }))
 app.use(express.json())
 app.use(cors({
-    origin:['http://localhost:5173','http://localhost:3000',"https://thumblify-drab.vercel.app/"],
+    origin:['http://localhost:5173','http://localhost:3000',"https://thumblify-drab.vercel.app"],
     credentials:true
 }))
 
