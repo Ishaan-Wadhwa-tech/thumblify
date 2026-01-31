@@ -10,6 +10,8 @@ import YtPreview from "./pages/YtPreview";
 import Login from "./components/Login";
 import { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
+import About from "./components/About";
+import { Contact } from "lucide-react";
 
 export default function App() {
     const {pathname} = useLocation()
@@ -29,6 +31,8 @@ export default function App() {
                 <Route path="/my-generation" element={<MyGeneration />} />
                 <Route path="/preview" element={<YtPreview />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact-us" element={<Contact />} />
             </Routes>
             <Footer />
         </>

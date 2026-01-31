@@ -34,11 +34,11 @@ export default function Navbar() {
                     {
                     isLoggedIn ? <Link to='/my-generation' className="hover:text-pink-500 transition">
                     My Generations
-                    </Link> : <Link to='#' className="hover:text-pink-500 transition">
+                    </Link> : <Link to='/about' className="hover:text-pink-500 transition">
                     About
                     </Link> 
                     }
-                    <Link to='#' className="hover:text-pink-500 transition">
+                    <Link to='contact-us' className="hover:text-pink-500 transition">
                     Contact Us
                     </Link>
                     
@@ -78,9 +78,9 @@ export default function Navbar() {
 
                 {
                     isLoggedIn ? <Link to='/my-generation' onClick={()=>setIsOpen(false)}>My Generations</Link>:
-                    <Link to='#' onClick={()=>setIsOpen(false)}>About</Link>
+                    <Link to='/about' onClick={()=>setIsOpen(false)}>About</Link>
                 }
-                <Link to='#' onClick={()=>setIsOpen(false)}>Contact Us</Link>
+                <Link to='/contact-us' onClick={()=>setIsOpen(false)}>Contact Us</Link>
 
                 {
                     isLoggedIn ? (
