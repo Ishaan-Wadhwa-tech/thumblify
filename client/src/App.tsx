@@ -11,7 +11,7 @@ import Login from "./components/Login";
 import { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import About from "./components/About";
-import { Contact } from "lucide-react";
+import Contact from "./components/Contact";
 
 export default function App() {
     const {pathname} = useLocation()

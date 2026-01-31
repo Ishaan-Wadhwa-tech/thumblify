@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { EnvelopeIcon, ChatBubbleLeftRightIcon, MapPinIcon } from "@heroicons/react/24/outline";
 
-const ContactSection = () => {
+const Contact = () => {
   return (
     <section className="relative py-24 bg-black text-white overflow-hidden" id="contact">
       {/* Subtle Background Accent */}
@@ -82,4 +82,4 @@ const ContactSection = () => {
   );
 };
 
-export default ContactSection;
+export default Contact;
