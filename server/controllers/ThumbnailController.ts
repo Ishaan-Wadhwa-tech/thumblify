@@ -30,7 +30,7 @@ user_prompt,style,
 aspect_ratio,
 color_scheme,text_overlay,isGenerating:true
 })
-const model = 'gemini-3-pro-image-preview'
+const model = 'gemini-3.1-flash-image-preview'
 
 const generationConfig:GenerateContentConfig={
 maxOutputTokens:32768,
