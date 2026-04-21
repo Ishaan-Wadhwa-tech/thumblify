@@ -16,5 +16,10 @@
             "src": "/(.*)",
             "dest": "server.ts"
         }
-    ]
+    ],
+    "functions": {
+    "api/**": {
+      "regions": ["bom1"]
+    }
+  }
 }
